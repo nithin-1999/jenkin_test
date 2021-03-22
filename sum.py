@@ -1,4 +1,3 @@
-#!/sh/bin/python
 
 a=10
 b=20
