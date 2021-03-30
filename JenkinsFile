@@ -11,8 +11,10 @@ pipeline {
             }
         }
          stage("test"){
-            steps{
-            echo 'buils'
+            when{
+                expression{
+                    params.executeTests
+                }
             }
         }
          stage("dep"){
