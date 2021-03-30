@@ -1,9 +1,6 @@
 pipeline {
     agent any 
-   paramters{
-       choice(name:'VERSION',choices:['1.0','2.1','2.3'],description:'')
-       booleanParam(name:'executeTests',defaultValue:true,description:'')
-   }
+  
     stages {
         stage("build"){
             steps{
@@ -11,16 +8,13 @@ pipeline {
             }
         }
          stage("test"){
-            when{
-                expression{
-                    params.executeTests
-                }
+             steps{
+            echo 'buils'
             }
         }
          stage("dep"){
             steps{
             echo 'deploying the apk'
-            echo "deploying version ${params.VERSION} "
             }
         }
     }
